@@ -1,0 +1,67 @@
+---
+title: "Your basic word template"
+author:
+  - James R. Junker:
+      email: jrjunker@mtu.edu
+      institute: glrc
+      correspondence: true
+  - name: Jill A. Olin
+    institute: mtu
+institute:
+   - glrc: Great Lakes Research Center, Michigan Technological University, Houghton, MI USA
+   - mtu: Department of Biological Sciences, Michigan Technological University, Houghton, MI USA
+date: "11/16/2021"
+output: word_document:
+  toc: no
+  pandoc_args:
+      - '--lua-filter=scholarly-metadata.lua'
+      - '--lua-filter=author-info-blocks.lua'
+header-includes:
+- \usepackage{lineno}
+- \usepackage{amsmath}
+- \usepackage{indentfirst}
+- \linenumbers
+indent: true
+linestretch: 1
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Heading 1
+
+This is normal text. We can set the format for each of the styles provided here, such as: Title, Author, Headings, and links.
+
+Here is a new paragraph. One of the more frustrating aspects of this current workflow is the inability to indent new paragraphs. If/when this is figured out, you should update the Markdown file to allow this. Of course this is a very minor adjustment.
+
+## Heading 2
+
+This started as an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see this link: <http://rmarkdown.rstudio.com>.
+
+### Heading 3
+
+Do you need an indented bulleted list? Here is one:
+
+* Topic 1
+* Topic 2
+  + Topic 2a
+  + Topic 2b
+* Topic 3
+
+#### Heading 4
+
+You can also create other bulleted lists:
+
+- Topic 4
+- Topic 5
+
+##### Heading 5
+
+If you need it here is some math, first inline -- $\delta$13C. And then separated out.
+
+$$ PS = 1 - 0.5 \sum_{j=1}^S|p_{x,i} - p_{y,i}|$$
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+Note that the code `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
